@@ -65,7 +65,11 @@ create table `User5` (
 );
 
 insert into `User5` set `name`='김유신';
+insert into `User5` set `name` = '김춘추', `addr`='부산시';
 #실습 2-8
+alter table `User5` add `hp` varchar(20);
+alter table `User5` add `age` char(10) default '0000-00-00'after `name`;
+alter table `User5` add `uid` varchar(10) primary key first;
 #실습 2-9
 #실습 2-10
 #실습 2-11
