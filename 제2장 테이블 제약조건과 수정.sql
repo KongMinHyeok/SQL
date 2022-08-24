@@ -51,30 +51,42 @@ create table `User4` (
     `addr`	varchar(255)
 );
 
+#실습 2-7
 insert into `User4` (`name`,`gender`,`age`,`addr`)values('김유신',1,25,'김해시');
 insert into `User4` (`name`,`gender`,`age`,`addr`)values('김춘추',1,23,'경주시');
 insert into `User4` (`name`,`gender`,`age`,`addr`)values('심사임당',3,27,'강릉시');
 delete from `User4` where `name`='심사임당';
 
-#실습 2-7
+#실습 2-8
+
+insert into `User5` set `name`='김유신';
+insert into `User5` set `name` = '김춘추', `addr`='부산시';
+
+#실습 2-9
+
 create table `User5` (
     `name`	varchar(10) NOT NULL,
 	`gender`tinyint,
 	`age`	tinyint default 1,
-    `addr`	varchar(255)
+    `addr`	varchar(10)
 );
+#실습 2-10
 
 insert into `User5` set `name`='김유신';
 insert into `User5` set `name` = '김춘추', `addr`='부산시';
-#실습 2-8
-alter table `User5` add `hp` varchar(20);
-alter table `User5` add `age` char(10) default '0000-00-00'after `name`;
-alter table `User5` add `uid` varchar(10) primary key first;
-#실습 2-9
-#실습 2-10
+
 #실습 2-11
+alter table `User5` add `hp` varchar(20);
+alter table `User5` add `birth` char(10) default '0000-00-00' after `name`;
+alter table `User5` add `uid` varchar(10) first;
+
 #실습 2-12
+alter table `User5` modify `hp` char(13);
+alter table `User5` modify `age` tinyint;
 #실습 2-13
+alter table `User5` change column `addr` `address` varchar(100);
 #실습 2-14
+alter table `User5` drop `gender`;
 #실습 2-15
+create table `User6` like `User5`;
 #실습 2-16
